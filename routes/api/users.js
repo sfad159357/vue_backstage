@@ -49,7 +49,7 @@ router.post("/register",  (req, res) => {
                     email: req.body.email,
                     avatar, // avatar:avatar
                     password: req.body.password,
-                  
+                    identity: req.body.identity
                 })
 
                 // 將密碼進行雜湊化
@@ -84,7 +84,12 @@ router.post('/login', (req, res) => {
                     if (!isMatch) return res.status(400).json({msg: '密碼錯誤'})
 
                     // jwt.sign() 參1"payload", 參2"加密名字", 參3"過期時間{秒}", "箭頭函式"
-                    const payload = {id: user.id, name:user.name} // 將DB內建的id最為id
+                    const payload = {
+                        id: user.id,
+                        name: user.name,
+                        avatar: user.avatar,
+                        identity: user.identity
+                    } // 將DB內建的id最為id
                     jwt.sign(
                         payload,
                         keys.secretOrKey,

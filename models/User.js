@@ -19,6 +19,10 @@ const UserSchema = new Schema({
     avatar: {
         type: String
     },
+    identity: {
+        type: String,
+        required: true
+    },
     create_at: {
         type: Date,
         // 由於存到遠端mongoDB會將我們本地時間轉換成UTF+0時間，所以timestamp要多加8小時給他扣

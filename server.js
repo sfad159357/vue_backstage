@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require("mongoose") // 連接mongoDB
 const bodyParser = require("body-parser")
 const users = require("./routes/api/users.js")
+const profiles = require('./routes/api/profiles')
 require('dotenv').config() // 導入環境變數配置
 const passport = require('passport')
 const passportConfig = require('./config/passport')
@@ -12,6 +13,7 @@ mongoose.
 connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false
 }).
 then(() => {
     console.log("順利連線mongoDB")
@@ -43,5 +45,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-// /api/users，會導入users的api
+// routes
 app.use("/api/users", users)
+app.use("/api/profiles", profiles)
