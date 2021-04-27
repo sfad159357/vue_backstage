@@ -24,6 +24,24 @@ js用來連接mongoDB的套件
 ### $ npm i jsonwebtoken passport passport-jwt
 jsonwebtoken產生jwt，passport、passport-jwt解析並驗證jwt
 
+### $ npm i vue@3.0.0
+
+### sudo npm install -g @vue/cli@3.0.0 
+全域安裝vue/cli 3.0.0版本，就不用再個別專案安裝cli
+
+### $ npm i concurrently
+
+要讓前端client和後端server用一台終端機同時去開啟
+
+在client資料夾中改變scripts的配置：
+"start": "npm run serve"
+
+在專案中的package.json改變scripts的配置：
+"client-install": "npm install --prefix client",
+"client": "npm start --prefix client"
+"dev": "concurrently \"npm run server\" \"npm run client\" "
+
+
 簡單來說，能把 Passport 想成是一個「處理驗證的 middleware」，因此能很容易的整合到 Express 當中 。
 
 passport-jwt使用jwt驗證端點，被用來安全化RESTful端點，而不需用到sessions
@@ -58,3 +76,5 @@ passport, passport-jwt
 在postman中的Body，在'/login'輸入自己的email, name, password，POST出去後，會得到 'Bear ' + token。
 
 切換到'/current' tab中的Header，key輸入Authorization，value貼上我們所複製的token，然後GET送出，就會返回user資訊，而在終端機會得到jwt_payload資訊。
+
+## 6.安裝相關vue套件
