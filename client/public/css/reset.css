@@ -1,0 +1,42 @@
+nav{
+    background-color: #F7AAA9;
+}
+
+.navbar a.navbar-brand {
+    color:white;
+}
+
+.navbar.navbar-expand-lg.navbar-light a.nav-link {
+    color: #ddd;
+}
+
+/* .navbar.navbar-expand-lg.navbar-light .nav-link.active {
+    color: black    ;
+} */
+
+.navbar.navbar-expand-lg.navbar-light .nav-link:hover{
+    color: black;
+}
+
+
+
+img.card-img-top{
+    height: 100px
+}
+
+.list-group{
+    position: relative;
+}
+
+.list-group>button{
+    color: #037AFF
+}
+
+.col.row.row-cols-8.row-cols-md-8.g-4{
+    margin-top:0px;
+    padding-top:0px;
+}
+
+.col.row.row-cols-8.row-cols-md-8.g-4 > .col{
+    margin-top:0px;
+}
