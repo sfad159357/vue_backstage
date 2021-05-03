@@ -104,6 +104,7 @@ export default {
     };
   },
   methods: {
+    // 這裡的forNmae是el-form ref的值：registerForm
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) alert("成功提交。");
